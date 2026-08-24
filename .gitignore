@@ -1,0 +1,5 @@
+DEMO_GUIDE.md
+ci.yaml
+.github/workflows/ci.yml
+__pycache__/
+*.py[cod]
