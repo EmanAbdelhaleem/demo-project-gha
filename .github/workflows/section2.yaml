@@ -22,12 +22,13 @@ jobs:
         run: pip install -r requirements.txt
   pre_commit_check:
     runs-on: ubuntu-latest
-    container:
-      image: python:3.12
     steps:
       - name: Checkout code
         uses: actions/checkout@v4  
       - name: Install pre-commit
-        run: pip install pre-commit
+        run: |
+         apt-get update
+         apt-get install -y --no-install-recommends git
+         pip install pre-commit
       - name: Run pre-commit hooks
         run: pre-commit run --all-files      
